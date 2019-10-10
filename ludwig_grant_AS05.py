@@ -5,7 +5,7 @@
 # Grant Ludwig
 # 10/14/2019
 # AS.05
-# Intro to For Loops
+# Have two buttons do different things
 
 # Import Libraries
 import RPi.GPIO as GPIO # Raspberry Pi GPIO library
@@ -27,7 +27,7 @@ GPIO.setup(13, GPIO.IN)
 def buttonOne_callback(channel): 
 	global lightOn
 	global waitIndex
-	print ("Button One Falling Edge") # debugging
+	#print ("Button One Falling Edge") # debugging
 	lightOn = not lightOn
 	if not lightOn:
 		waitIndex = 0
@@ -35,7 +35,7 @@ def buttonOne_callback(channel):
 def buttonTwo_callback(channel):
 	global lightOn
 	global waitIndex
-	print ("Button Two Falling Edge") # debugging
+	#print ("Button Two Falling Edge") # debugging
 	if lightOn:
 		waitIndex += 1
 		if waitIndex >= len(waitTime):
